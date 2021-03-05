@@ -7,11 +7,9 @@ int findPrime(int topNumber){
     int amountOfPrimes = 0;
     pid_t pid = getpid();
     for(i=2; i<=topNumber; i++){ //looping throug all the numbers untill the highes number
-        //printf("Checking the number: %d .\n", i);
         int j;
         int notPrime=0;
         for(j=2;j<=i/2;j++){ //Checking if prime or not
-            //printf("Going to check %d percentage with %d . \n",i,j);
             if(i%j==0){
                 notPrime=1;
                 break;
