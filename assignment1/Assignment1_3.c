@@ -6,7 +6,7 @@ int findPrime(int topNumber){
     int i;
     int amountOfPrimes = 0;
     pid_t pid = getpid();
-    for(i=2; i<=topNumber; i++){ //looping throug all the numbers untill the highes number
+    for(i=2; i<=topNumber; i++){ //looping through all the numbers until the highest number
         int j;
         int notPrime=0;
         for(j=2;j<=i/2;j++){ //Checking if prime or not
@@ -25,7 +25,10 @@ int findPrime(int topNumber){
 }
 
 int main() {
-    fork();
-    fork();
-    return findPrime(10000);
+	fork();
+	fork();
+	if(fork() == 0){ //for all the 4 child processes
+		findPrime(10000);
+	}
+	return 0;
 }
