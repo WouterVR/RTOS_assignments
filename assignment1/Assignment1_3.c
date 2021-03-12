@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <time.h> 
 
 int findPrime(int topNumber){
     int i;
@@ -25,10 +26,17 @@ int findPrime(int topNumber){
 }
 
 int main() {
+
+    clock_t t; 
+    t = clock();
 	fork();
 	fork();
 	if(fork() == 0){ //for all the 4 child processes
 		findPrime(10000);
 	}
-	return 0;
+
+    t = clock() - t; 
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+    printf("It took %f seconds to execute this program", time_taken);
+    return 0;
 }
