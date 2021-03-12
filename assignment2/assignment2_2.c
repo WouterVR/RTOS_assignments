@@ -26,7 +26,7 @@ int checkPrime(int numberToCheck){
 void* producer() {
   int i;
   
-  for(i=2; i< 1000; i++) {
+  for(i=2; i< 10000; i++) {
     shelf = i;
     sem_post(&obj_produced);
     sem_wait(&obj_consumed);
