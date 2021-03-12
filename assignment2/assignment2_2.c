@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <pthread.h>
-#include <semaphore.h> 
-#include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
+#include <semaphore.h> 
+#include <stdlib.h>
 
 static sem_t obj_produced;
 static sem_t obj_consumed;
@@ -23,7 +23,7 @@ int checkPrime(int numberToCheck){
 }
 
 //Provides numbers for the consumers to handle
-void * producer() {
+void* producer() {
   int i;
   
   for(i=2; i< 1000; i++) {
@@ -36,7 +36,7 @@ void * producer() {
 }
 
 // A consumer takes an object provided by the producer and checks if it is prime or not
-void * consumer() { 
+void* consumer() { 
   // Store the value argument passed to this thread
   int numberToCheck;
 
