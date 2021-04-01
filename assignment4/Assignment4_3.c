@@ -13,8 +13,10 @@ void heapOverflow(){
 }
 
 void stackOverflow(int number){
+    //Some basic logic
     if(number == 0) return;
     number = 9;
+    //Recursion
     stackOverflow(number);
 }
 
